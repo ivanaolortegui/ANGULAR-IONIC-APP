@@ -1,9 +1,9 @@
 export class ListItem {
     desc: string;
-    completed: boolean;
+    finished: boolean;
 
     constructor( desc: string) {
         this.desc = desc;
-        this.completed = false;
+        this.finished = false;
     }
 }
