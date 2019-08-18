@@ -11,6 +11,6 @@ import { ToDoService } from '../../services/to-do.service';
 })
 export class Tab2Page {
 
-  constructor( public toDo : ToDoService) {}
+  constructor( public toDo: ToDoService) {}
 
 }

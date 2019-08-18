@@ -12,20 +12,22 @@ import { List } from '../../models/list-model';
 })
 export class ListComponent implements OnInit {
 
-@Input() finished = true;
+  @Input() finished = true;
 
-  constructor( public toDo :ToDoService, private router: Router) { }
+  constructor(public toDo: ToDoService, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  selectedList(list : List){  
-    if(this.finished){
-      this.router.navigateByUrl(`tabs/tab2/add/${ list.id }`)
+  selectedList(list: List) {
+    if (this.finished) {
+      this.router.navigateByUrl(`tabs/tab2/add/${list.id}`);
     } else {
-      this.router.navigateByUrl(`tabs/tab1/add/${ list.id }`)
+      this.router.navigateByUrl(`tabs/tab1/add/${list.id}`);
     }
-   
-  
+  }
+  deleteList(list: List) {
+    this.toDo.deleteList(list);
+
   }
 
 }

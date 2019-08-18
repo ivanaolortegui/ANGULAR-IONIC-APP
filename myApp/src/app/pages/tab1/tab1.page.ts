@@ -14,41 +14,39 @@ import { List } from '../../models/list-model';
 })
 export class Tab1Page {
 
-  constructor( public toDo : ToDoService , private router: Router, private alertController: AlertController ) {
-    
+  constructor( public toDo: ToDoService , private router: Router, private alertController: AlertController ) {
   }
 
-  async addList(){
+  async addList() {
 
     const alert = await this.alertController.create({
       header: 'Nueva lista',
       inputs: [{
-        name:'title',
+        name: 'title',
         type: 'text',
         placeholder: 'Nombre de la lista'
       }],
       buttons: [
         {
-          text:'Cancelar',
-          role:'cancel',
-          handler:()=>{
-            console.log('Cancelar');  
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancelar');
           }
         },
         {
           text: 'Crear',
-          handler:(data)=>{
+          handler: (data) => {
             console.log(data);
-            if(data.title.length === 0){
+            if (data.title.length === 0) {
               return;
             }
-            const listId = this.toDo.createList(data.title)
-            this.router.navigateByUrl(`tabs/tab1/add/${ listId }`)
+            const listId = this.toDo.createList(data.title);
+            this.router.navigateByUrl(`tabs/tab1/add/${ listId }`);
           }
         }
       ]
     });
-
-     alert.present()
+    alert.present();
   }
 }
