@@ -4,6 +4,8 @@ import { AlertController } from '@ionic/angular';
 
 import { ToDoService } from '../../services/to-do.service';
 import { Router } from '@angular/router';
+import { ListItem } from '../../models/list-item.model';
+import { List } from '../../models/list-model';
 
 @Component({
   selector: 'app-tab1',

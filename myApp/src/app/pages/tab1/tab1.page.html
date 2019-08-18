@@ -6,16 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list color="dark">
-    <ion-item *ngFor="let item of toDo.list" color="dark" detail>
-      <ion-label>{{item.title}}</ion-label>
-    </ion-item>
-  </ion-list>
+
+<ion-content color="dark">
+    <app-list [finished] = "false"></app-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="tertiary" (click)="addList()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

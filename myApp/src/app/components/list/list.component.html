@@ -1,0 +1,6 @@
+<ion-list color="dark">
+    <ion-item *ngFor="let item of toDo.list"  color="dark" (click)="selectedList(item)" detail>
+      <ion-label>{{item.title}}</ion-label>
+      <ion-note slot="end" color="tertiary" >{{item.items.length}} items</ion-note>
+    </ion-item>
+</ion-list>
